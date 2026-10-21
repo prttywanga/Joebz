@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17233b">
+  <title>JOEBZ Inventory Management System</title>
+  <link rel="stylesheet" href="styles_purchase_workflow_updated.css">
+</head>
+<body>
+<div id="app">
+  <aside class="sidebar">
+    <div>
+      <div class="brand"><div class="brand-mark">J</div><div><b>JOEBZ</b><small>Inventory Management System</small></div></div>
+      <nav id="nav">
+        <button data-view="dashboard" class="nav-item active">▦ <span>Dashboard</span></button>
+        <button data-view="inventory" class="nav-item">▤ <span>Inventory</span></button>
+        <button data-view="suppliers" class="nav-item">♧ <span>Suppliers</span></button>
+        <button data-view="pq" class="nav-item">▱ <span>Purchase Quote (PQ)</span></button>
+        <button data-view="po" class="nav-item">▤ <span>Purchase Order (PO)</span></button>
+        <button data-view="pi" class="nav-item">▣ <span>Purchase Invoice (PI)</span></button>
+        <button data-view="warehousing" class="nav-item">⌂ <span>Warehousing</span></button>
+        <button data-view="transfers" class="nav-item">⇄ <span>Transfers</span></button>
+        <button data-view="pos" class="nav-item">▣ <span>POS / Sales</span></button>
+        <button data-view="finance" class="nav-item">₱ <span>Payable / Receivable</span></button>
+        <button data-view="reports" class="nav-item">◒ <span>Reports</span></button>
+      </nav>
+    </div>
+    <div class="sidebar-foot">
+      <button data-view="settings" class="nav-item">⚙<span>Settings</span></button>
+      <!-- <small>Data is stored locally in this browser.<br>Export a JSON backup regularly.</small> -->
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="top-left">
+        <button id="menuBtn" class="icon">☰</button>
+        <div><small>Inventory Management</small><strong id="pageTitle">Dashboard</strong></div>
+      </div>
+      <div class="top-actions">
+        <span id="clock"></span>
+        <button id="exportJson" class="icon" title="Backup">⇩</button>
+        <label class="icon" title="Restore">⇧<input id="importJson" type="file" accept=".json" hidden></label>
+      </div>
+    </header>
+    <section id="content"></section>
+  </main>
+</div>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div><h2 id="modalTitle">Form</h2><p id="modalSubtitle"></p></div>
+      <button id="closeModal" class="icon">×</button>
+    </div>
+    <form id="modalForm"></form>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="app_purchase_workflow_updated.js"></script>
+</body>
+</html>
